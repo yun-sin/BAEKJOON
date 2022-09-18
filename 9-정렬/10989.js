@@ -1,12 +1,14 @@
 const fs = require("fs");
 let input = fs.readFileSync("BAEKJOON/dev/stdin.txt").toString().trim().split("\n");
-const N = parseInt(input[0]);
+const N = input.shift();
 
-const array = new Array(N + 1);
+const max = Math.max(...input);
+
+const array = new Array(max + 1);
 array.fill(0);
 
 for (let i = 0; i < input.length; i++) {
-  array[input[i]]++;
+  array[parseInt(input[i])]++;
 }
 
 for (let i = 0; i < array.length; i++) {
